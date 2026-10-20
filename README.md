@@ -121,8 +121,8 @@ Redeploy after changing environment variables.
 
 ## Submission Links
 
-- Backend source: TO BE ADDED
-- Frontend source: TO BE ADDED
-- Backend deployment: TO BE ADDED
-- Frontend deployment: TO BE ADDED
+- Backend source: https://github.com/natzusss/WAD-final/tree/main/next-backend
+- Frontend source: https://github.com/natzusss/WAD-final/tree/main/react-frontend
+- Backend deployment: https://wad-final-backend-six.vercel.app
+- Frontend deployment: https://wad-final-frontend-two.vercel.app
 - Screen recording: TO BE ADDED
