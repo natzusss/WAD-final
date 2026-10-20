@@ -1,0 +1,95 @@
+#root {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f3f6fb;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 28px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 23px;
+  font-weight: 700;
+  margin: 24px 0 16px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+p {
+  margin: 8px 0;
+}
+
+article,
+form {
+  background: white;
+  padding: 24px;
+  border: 1px solid #dce3ed;
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #b9c5d6;
+  border-radius: 6px;
+  background: white;
+  color: #172033;
+  font: inherit;
+}
+
+button {
+  padding: 10px 16px;
+  margin: 6px 8px 6px 0;
+  border: none;
+  border-radius: 6px;
+  background: #2459d3;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+[role="alert"] {
+  color: #b42318;
+}
+
+@media (max-width: 600px) {
+  main {
+    margin: 12px auto;
+    padding: 16px;
+  }
+}

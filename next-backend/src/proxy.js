@@ -8,17 +8,25 @@ import {
 } from "./lib/constant";
 
 export function proxy(request) {
+  // Browsers send OPTIONS before some API requests.
+  if (request.method === "OPTIONS") {
+    return new NextResponse(null, {
+      status: 204,
+      headers: corsHeaders,
+    });
+  }
+
+  // Login must be accessible without an existing session.
+  if (request.nextUrl.pathname === "/api/auth/login") {
+    return NextResponse.next();
+  }
+
   const user = verifyJWT(request);
 
   if (!user) {
     return NextResponse.json(
-      {
-        message: "Unauthorized Request",
-      },
-      {
-        status: 401,
-        headers: corsHeaders,
-      },
+      { message: "Please log in" },
+      { status: 401, headers: corsHeaders },
     );
   }
 
@@ -28,12 +36,10 @@ export function proxy(request) {
   requestHeaders.set(X_HEADER_USER_NAME, user.username);
 
   return NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
+    request: { headers: requestHeaders },
   });
 }
 
 export const config = {
-  matcher: [],
+  matcher: "/api/:path*",
 };
